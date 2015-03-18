@@ -7,14 +7,14 @@ from runner.koan import *
 class AboutTuples(Koan):
     def test_creating_a_tuple(self):
         count_of_three = (1, 2, 5)
-        self.assertEqual(__, count_of_three[2])
+        self.assertEqual(5, count_of_three[2])
 
     def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
         count_of_three = (1, 2, 5)
         try:
             count_of_three[2] = "three"
         except TypeError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'tuple' object does not support item assignment", ex[0])
 
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three = (1, 2, 5)
